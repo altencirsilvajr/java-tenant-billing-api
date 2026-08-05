@@ -1,0 +1,18 @@
+<main>
+  <p class="eyebrow">LABORATÓRIO VERTICAL · JAVA 17</p>
+  <h1>Tenant Billing</h1>
+  <p class="lead">Veja tenant boundary, assinatura com snapshot do plano e auditoria append-only atravessando a API Spring Boot real.</p>
+
+  <section class="actions">
+    <button (click)="runFlow()" [disabled]="running()">Rodar fluxo completo</button>
+    <button class="secondary" (click)="testCrossTenant()" [disabled]="running()">Testar violação cross-tenant</button>
+  </section>
+
+  <section class="flow">
+    <span>Tenant</span><b>→</b><span>User</span><b>→</b><span>Plan snapshot</span><b>→</b><span>Audit</span>
+  </section>
+
+  @if (running()) { <div class="panel">Executando chamadas reais…</div> }
+  @if (result()) { <div class="panel success"><h2>Resultado</h2><pre>{{ result() | json }}</pre></div> }
+  @if (error()) { <div class="panel error"><h2>Falha</h2><pre>{{ error() | json }}</pre></div> }
+</main>

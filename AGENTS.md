@@ -20,4 +20,4 @@ npm --prefix frontend test -- --watch=false
 npm --prefix frontend run build
 ```
 
-Enquanto um subsistema ainda não existir, execute os comandos aplicáveis e registre a limitação no Journal.
+O Angular 22 exige Node `>=24.15.0` na linha 24. Enquanto um subsistema ainda não existir, execute os comandos aplicáveis e registre a limitação no Journal.

@@ -1,0 +1,10 @@
+stages: [test]
+backend:
+  stage: test
+  image: eclipse-temurin:17-jdk
+  services: [docker:29-dind]
+  script: ["./mvnw verify", "./scripts/verify-traceability.sh"]
+frontend:
+  stage: test
+  image: node:24.15
+  script: ["cd frontend", "npm ci", "npm test -- --watch=false", "npm run build"]
